@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+  	<meta name="description" content="Welcome to OSRS Clicker!" />
+  	<meta name="keywords" content="Run, Escape, RunEscape, Incremental, Clicker, Game" />
+  	<meta name="author" content="Joe Gretton" />
+  	<title>OSRS Clicker</title>
+  	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+	<div id="game-container">
+		<div id="gameplay-screen">
+			<div id="skill-screen" style="display: none;">
+				<div id="title-bar">
+					<div id="title" style="text-transform: capitalize;"></div>
+					<div id="x-button"></div>
+				</div>
+				<div id="screen-content">
+					<div id="level-exp-info">
+						<div id="level-exp">
+							<div id="level-display">
+								lvl: <span id="cur-level">0</span>
+							</div>
+							<div id="exp-display">
+								<span id="cur-exp">0</span>/<span id="next-level-exp">0</span>xp
+							</div>
+						</div>
+						<div id="exp-bar">
+							<div id="exp-progress"></div>
+						</div>
+						<div id="action-bar">
+							<div id="action-progress"></div>
+						</div>
+					</div>
+					<div id="indent-line"></div>
+					<div id="upgrades-container">
+						<div id="title-left">Upgrades</div>
+						<div id="title-right">Other Stuff</div>
+						<div id="menu-left">
+							<div id="clay" class="action-plate">
+								<img src="images/icons/clay.png"/>
+								<div>
+									<div id="clay" class="action-button">Clay</div>
+									<div id="action-info">
+										<div id="time-info">lvl: <span id="lvl">1</span></div>
+										<div id="exp-info">time: <span id="time">2</span>s</div>
+									</div>
+								</div>
+							</div>
+							<div id="copperOre" class="action-plate">
+								<img src="images/icons/copperOre.png"/>
+								<div>
+									<div id="copperOre" class="action-button">Copper Ore</div>
+									<div id="action-info">
+										<div id="time-info">lvl: <span id="lvl">1</span></div>
+										<div id="exp-info">time: <span id="time">2</span>s</div>
+									</div>
+								</div>
+							</div>
+							<div id="tinOre" class="action-plate">
+								<img src="images/icons/tinOre.png"/>
+								<div>
+									<div id="tinOre" class="action-button">Tin Ore</div>
+									<div id="action-info">
+										<div id="time-info">lvl: <span id="lvl">1</span></div>
+										<div id="exp-info">time: <span id="time">2</span>s</div>
+									</div>
+								</div>
+							</div>
+							<div id="runeEssence" class="action-plate">
+								<img src="images/icons/clay.png"/>
+								<div>
+									<div id="runeEssence" class="action-button disabled">Rune Essence</div>
+									<div id="action-info">
+										<div id="time-info">lvl: <span id="lvl">10</span></div>
+										<div id="exp-info">time: <span id="time">4</span>s</div>
+									</div>
+								</div>
+							</div>
+
+
+						</div>
+						<div id="menu-right">
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="minimap-container"></div>
+		<div id="sidebar-container">
+	 		<div id="sidebar-menu-top">
+	 			<div id="combat" class="tab combat"></div>
+				<div id="skills" class="tab skills"></div>
+	 			<div id="quests" class="tab quests"></div>
+	 			<div id="inventory" class="tab inventory"></div>
+	 			<div id="equipment" class="tab equipment"></div>
+	 			<div id="prayer" class="tab prayer"></div>
+	 			<div id="spells" class="tab spells"></div>
+	 		</div>
+	 		<div id="sidebar">
+	 			<div id="sidebar-panel">
+					 <div id="combat-panel" class="panel hide">
+
+					 </div>
+					<div id="skills-panel" class="panel hide">
+						<div id="skills-container">
+							<div id="attack" class="skill"><img src="images/Skill Overlay.png"/></div>
+							<div id="hitpoints" class="skill"><img src="images/Skill Overlay.png"/></div>
+							<div id="mining" class="skill"><img src="images/Skill Overlay.png"/></div>
+							<div id="strength" class="skill"><img src="images/Skill Overlay.png"/></div>
+							<div id="agility" class="skill"><img src="images/Skill Overlay.png"/></div>
+							<div id="smithing" class="skill"><img src="images/Skill Overlay.png"/></div>
+							<div id="defence" class="skill"><img src="images/Skill Overlay.png"/></div>
+							<div id="herblore" class="skill"><img src="images/Skill Overlay.png"/></div>
+							<div id="fishing" class="skill"><img src="images/Skill Overlay.png"/></div>
+							<div id="ranged" class="skill"><img src="images/Skill Overlay.png"/></div>
+							<div id="thieving" class="skill"><img src="images/Skill Overlay.png"/></div>
+							<div id="cooking" class="skill"><img src="images/Skill Overlay.png"/></div>
+							<div id="prayer" class="skill"><img src="images/Skill Overlay.png"/></div>
+							<div id="crafting" class="skill"><img src="images/Skill Overlay.png"/></div>
+							<div id="firemaking" class="skill"><img src="images/Skill Overlay.png"/></div>
+							<div id="magic" class="skill"><img src="images/Skill Overlay.png"/></div>
+							<div id="fletching" class="skill"><img src="images/Skill Overlay.png"/></div>
+							<div id="woodcutting" class="skill"><img src="images/Skill Overlay.png"/></div>
+							<div id="runecrafting" class="skill"><img src="images/Skill Overlay.png"/></div>
+							<div id="slayer" class="skill"><img src="images/Skill Overlay.png"/></div>
+							<div id="farming" class="skill"><img src="images/Skill Overlay.png"/></div>
+							<div id="construction" class="skill"><img src="images/Skill Overlay.png"/></div>
+							<div id="hunter" class="skill"><img src="images/Skill Overlay.png"/></div>
+							<div id="total-level"></div>
+						</div>
+					</div>
+					<div id="quests-panel" class="panel hide">
+
+					</div>
+					<div id="inventory-panel" class="panel hide">
+
+					</div>
+					<div id="equipment-panel" class="panel hide">
+
+					</div>
+					<div id="prayer-panel" class="panel hide">
+
+					</div>
+					<div id="spells-panel" class="panel hide">
+
+					</div>
+
+					<!-- div#botmenu... -->
+				 </div>
+	 		</div>
+	 		<div id="sidebar-menu-bottom">
+				<div id="botmenu1" class="tab botmenu1"></div>
+				<div id="botmenu2" class="tab botmenu2"></div>
+	 			<div id="botmenu3" class="tab botmenu3"></div>
+	 			<div id="botmenu4" class="tab botmenu4"></div>
+	 			<div id="botmenu5" class="tab botmenu5"></div>
+	 			<div id="botmenu6" class="tab botmenu6"></div>
+	 			<div id="botmenu7" class="tab botmenu7"></div>
+			 </div>
+	 	</div>
+	 	<div id="textbox"></div>
+		<div id="textbox-settings"></div>
+
+		<!-- do this -->
+		<div id="templates">
+
+		</div>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="helpers.js"></script>
+	<script src="driver.js"></script>
+	<script src="skills.js"></script>
+	<script src="view.js"></script>
+	<script src="items.js"></script>
+	<script src="player.js"></script>
+	<script src="clickResponses.js"></script>
+
+	<script>startGame()</script>
+</body>
+</html>

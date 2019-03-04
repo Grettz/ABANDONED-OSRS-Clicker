@@ -1,0 +1,374 @@
+@font-face {
+    font-family: runescape;
+    src: url(fonts/runescape_uf.woff);
+}
+* {
+	margin: 0px;
+	padding: 0px;
+}
+body {
+	background-color: black;
+	font-family: runescape;
+	text-shadow: 1px 1px black;
+}
+
+
+
+.hide {
+	display: none;
+}
+.show {
+	display: initial;
+}
+.opacHide {
+	opacity: 0;
+}
+.opacShow {
+	opacity: 0.1;
+}
+
+
+
+/*  GAME GRID  */
+
+#game-container {
+	display: grid;
+	width: 765px;
+	height: 503px;
+	margin: auto;
+	margin-top: 100px;
+	grid-template-columns: 519px 246px;
+	grid-template-rows: 168px 171px 141px 23px;
+	background-image: url("images/GUI.png");
+}
+
+
+/* GAMEPLAY SCREEN */
+
+#gameplay-screen {
+	grid-column-start: 1;
+	grid-column-end: 2;
+	grid-row-start: 1;
+	grid-row-end: 3;
+	padding: 6px;
+	color: white;
+}
+	/* Skill Screen */
+#skill-screen {
+	display: grid;
+	grid-template-rows: 23px 286px;
+	padding: 6px;
+	grid-gap: 6px;
+	background: url("images/skill page.png");
+}
+#skill-screen #title {
+	margin-top: 3px;
+	color: rgb(249, 152, 31);
+	text-align: center;
+}
+#title-bar {
+	display: grid;
+	grid-template-columns: auto 23px;
+}
+
+	/* X Button */
+#x-button  {
+	height: 21px;
+	width: 21px;
+	margin: 1px;
+	background: url("images/x\ button.png");
+}
+#x-button:active {
+	-webkit-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
+
+	/* Screen Content */
+#level-exp-info {
+	display: grid;
+	grid-template-rows: 15px 10px 5px;
+	grid-gap: 4px;
+	margin: 10px;
+	margin-left: 20px;
+	margin-right: 20px;
+	color: yellow;
+}
+#level-exp {
+	display: grid;
+	grid-template-columns: auto auto;
+}
+#level-display {
+	justify-self: start;
+	margin-left: 4px;
+}
+#exp-display {
+	justify-self: end;
+	margin-right: 4px;
+}
+#exp-bar {	
+	background: rgb(15, 15, 15);
+	box-shadow: inset 1px 1px #2e271c, inset -1px -1px #685f50;
+}
+#action-bar {
+	background: rgb(15, 15, 15);
+	box-shadow: inset 1px 1px #2e271c, inset -1px -1px #685f50;
+}
+#exp-progress {
+	background: rgb(255, 255, 0);
+	box-shadow: inset 1px 1px rgb(255, 255, 175), inset -1px -1px rgb(170, 170, 0);
+	height: 100%;
+	width: 0%;
+}
+#action-progress {
+    background: rgb(255, 155, 0);
+    box-shadow: inset 1px 1px rgb(255, 175, 100), inset -1px -1px rgb(182, 100, 0);
+	height: 100%;
+	width: 0%;
+}
+
+#indent-line {
+	height: 2px;
+	box-shadow: inset 0px 1px #2e271c, inset 0px -1px #685f50;
+}
+
+#upgrades-container {
+	display: grid;
+	grid-template-columns: 50fr 50fr;
+	grid-template-rows: 15px auto;
+	grid-gap: 4px;
+	grid-column-gap: 25px;
+	margin: 10px;
+	margin-left: 20px;
+	margin-right: 20px;
+	height: 206px;
+	color: rgb(255, 155, 0);
+}
+#title-left, #title-right {
+	justify-self: center;
+}
+#menu-left, #menu-right {
+    background-color: rgb(58, 60, 40);
+	box-shadow: inset -1px -1px rgb(90, 82, 69), inset 1px 1px rgb(45, 39, 28);
+	overflow: auto;
+}
+#menu-left {
+	padding: 2px;
+}
+
+
+/* ACTION MENU */
+
+#menu-left .action-plate {
+	display: grid;
+	grid-template-columns: 36px auto;
+	grid-template-rows: auto auto;
+	margin-top: 2px;
+    margin-left: 3px;
+    margin-right: 3px;
+    margin-bottom: 0px;
+    padding: 3px;
+	box-shadow: inset 1px 1px rgb(90, 82, 69), inset -1px -1px rgb(45, 39, 28);
+	background: rgb(73,64, 52);
+}
+
+.action-plate img {
+	justify-self: center;
+	align-self: center;
+}
+
+/* Action Button */
+.action-button {
+	background-color: rgb(100, 85, 70);
+    border: 1px solid black;
+    border-radius: 3px;
+    box-shadow: inset -1px -1px rgb(65, 48, 57), inset 1px 1px rgb(126, 111, 92), inset -2px -2px rgb(72, 65, 54), inset 2px 2px rgb(103, 96, 77);
+    padding-top: 2px;
+    padding-bottom: 4px;
+    color: rgb(255, 155, 0);
+    text-shadow: 1px 1px black;
+    cursor: pointer;
+	text-align: center;
+	align-self: center;
+}
+.action-button {
+    /* Button lighting with sharp corners */
+    box-shadow: inset -1px 0px rgb(65, 48, 57), inset 0px -1px rgb(65, 48, 57), inset 1px 0px rgb(126, 111, 92), inset 0px 1px rgb(126, 111, 92), inset -2px 0px rgb(72, 65, 54), inset 0px -2px rgb(72, 65, 54), inset 2px 0px rgb(103, 96, 77), inset 0px 2px rgb(103, 96, 77);
+}
+.action-button:hover {
+    filter: brightness(1.15);
+}
+.action-button:active {
+    box-shadow: inset -1px 0px rgb(126, 111, 92), inset 0px -1px rgb(126, 111, 92), inset 1px 0px rgb(65, 48, 57), inset 0px 1px rgb(65, 48, 57), inset -2px 0px rgb(103, 96, 77), inset 0px -2px rgb(103, 96, 77), inset 2px 0px rgb(72, 65, 54), inset 0px 2px rgb(72, 65, 54);
+    /* Translates text within the button */
+    padding-top: 4px;
+    padding-bottom: 2px;
+    padding-left: 2px;
+}
+.action-button.disabled {
+    box-shadow: inset -1px 0px rgb(126, 111, 92), inset 0px -1px rgb(126, 111, 92), inset 1px 0px rgb(65, 48, 57), inset 0px 1px rgb(65, 48, 57), inset -2px 0px rgb(103, 96, 77), inset 0px -2px rgb(103, 96, 77), inset 2px 0px rgb(72, 65, 54), inset 0px 2px rgb(72, 65, 54);
+    opacity: 0.5;
+	cursor: auto;
+	/* Translates text within the button */
+    padding-top: 4px;
+    padding-bottom: 2px;
+    padding-left: 2px;
+}
+.cusDisabled {
+	box-shadow: inset -1px 0px rgb(126, 111, 92), inset 0px -1px rgb(126, 111, 92), inset 1px 0px rgb(65, 48, 57), inset 0px 1px rgb(65, 48, 57), inset -2px 0px rgb(103, 96, 77), inset 0px -2px rgb(103, 96, 77), inset 2px 0px rgb(72, 65, 54), inset 0px 2px rgb(72, 65, 54);
+    opacity: 0.5;
+	cursor: auto;
+	/* Translates text within the button */
+    padding-top: 4px;
+    padding-bottom: 2px;
+    padding-left: 2px;
+}
+.action-button.disabled:hover, .cusDisabled:hover {
+	filter: brightness(1);
+}
+
+#action-info {
+	display: grid;
+	grid-template-columns: auto auto;
+	margin: 1px;
+}
+#time-info {
+	justify-self: left;
+	margin-left: 2px;
+}
+#exp-info {
+	justify-self: right;
+	margin-right: 2px;
+}
+
+
+
+/* MINIMAP */
+
+#minimap-container {
+	grid-column-start: 2;
+	grid-column-end: 3;
+	grid-row-start: 1;
+	grid-row-end: 2;
+}
+#textbox {
+	grid-column-start: 1;
+	grid-column-end: 2;
+	grid-row-start: 3;
+	grid-row-end: 4;
+}
+#textbox-settings {
+	grid-column-start: 1;
+	grid-column-end: 2;
+	grid-row-start: 4;
+	grid-row-end: 5;
+}
+#sidebar-container {
+	grid-column-start: 2;
+	grid-column-end: 3;
+	grid-row-start: 2;
+	grid-row-end: 5;
+	padding-left: 3px;
+	padding-right: 2px;
+}
+
+
+/*  SIDEBAR MENU  */
+
+#sidebar-menu-top {
+	display: grid;
+	grid-template-columns: 38px 33px 33px 33px 33px 33px 38px;
+	grid-template-rows: 36px;
+}
+/* TOP MENU TAB SPRITES */
+#sidebar-menu-top .combat {background: url("images/Tab Sprites.png") 0px 0px;}
+#sidebar-menu-top .skills {background: url("images/Tab Sprites.png") -38px 0px;}
+#sidebar-menu-top .quests {background: url("images/Tab Sprites.png") -71px 0px;}
+#sidebar-menu-top .inventory {background: url("images/Tab Sprites.png") -104px 0px;}
+#sidebar-menu-top .equipment {background: url("images/Tab Sprites.png") -137px 0px;}
+#sidebar-menu-top .prayer {background: url("images/Tab Sprites.png") -170px 0px;}
+#sidebar-menu-top .spells {background: url("images/Tab Sprites.png") -203px 0px;}
+/* TOP MENU TAB SPRITES SELECTED */
+#sidebar-menu-top .combat-selected {background: url("images/Tab Sprites.png") 0px -73px;}
+#sidebar-menu-top .skills-selected {background: url("images/Tab Sprites.png") -38px -73px;}
+#sidebar-menu-top .quests-selected {background: url("images/Tab Sprites.png") -71px -73px;}
+#sidebar-menu-top .inventory-selected {background: url("images/Tab Sprites.png") -104px -73px;}
+#sidebar-menu-top .equipment-selected {background: url("images/Tab Sprites.png") -137px -73px;}
+#sidebar-menu-top .prayer-selected {background: url("images/Tab Sprites.png") -170px -73px;}
+#sidebar-menu-top .spells-selected {background: url("images/Tab Sprites.png") -203px -73px;}
+
+#sidebar-menu-bottom {
+	display: grid;
+	grid-template-columns: 38px 33px 33px 33px 33px 33px 38px;
+	grid-template-rows: 36px;
+}
+/* BOTTOM MENU TAB SPRITES */
+#sidebar-menu-bottom .botmenu1 {background: url("images/Tab Sprites.png") 0px -36px;}
+#sidebar-menu-bottom .botmenu2 {background: url("images/Tab Sprites.png") -38px -36px;}
+#sidebar-menu-bottom .botmenu3 {background: url("images/Tab Sprites.png") -71px -36px;}
+#sidebar-menu-bottom .botmenu4 {background: url("images/Tab Sprites.png") -104px -36px;}
+#sidebar-menu-bottom .botmenu5 {background: url("images/Tab Sprites.png") -137px -36px;}
+#sidebar-menu-bottom .botmenu6 {background: url("images/Tab Sprites.png") -170px -36px;}
+#sidebar-menu-bottom .botmenu7 {background: url("images/Tab Sprites.png") -203px -36px;}
+/* BOTTOM MENU TAB SPRITES SELECTED */
+#sidebar-menu-bottom .botmenu1-selected {background: url("images/Tab Sprites.png") 0px -109px;}
+#sidebar-menu-bottom .botmenu2-selected {background: url("images/Tab Sprites.png") -38px -109px;}
+#sidebar-menu-bottom .botmenu3-selected {background: url("images/Tab Sprites.png") -71px -109px;}
+#sidebar-menu-bottom .botmenu4-selected {background: url("images/Tab Sprites.png") -104px -109px;}
+#sidebar-menu-bottom .botmenu5-selected {background: url("images/Tab Sprites.png") -137px -109px;}
+#sidebar-menu-bottom .botmenu6-selected {background: url("images/Tab Sprites.png") -170px -109px;}
+#sidebar-menu-bottom .botmenu7-selected {background: url("images/Tab Sprites.png") -203px -109px;}
+
+
+#sidebar-panel {
+	width: 186px;
+	height: 262px;
+	margin: auto;
+}
+
+/* SKILLS PANEL */
+
+#skills-container {
+	display: grid;
+	grid-template-columns: 62px 62px 62px;
+	grid-template-rows: 32px 32px 32px 32px 32px 32px 32px 32px;
+	background: url("images/Skills No Levels.png") 0px 0px;
+}
+/* Disable image dragging */
+#skills-container img {
+	/* user-drag: none;  */
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-drag: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+}
+
+.skill {
+	opacity: 0;
+}
+.skill:hover {
+	opacity: 0.1;
+}
+
+
+/* 	SCROLLBAR */
+
+/* width */
+#menu-left::-webkit-scrollbar {
+    width: 3px;
+}
+/* Track */
+#menu-left::-webkit-scrollbar-track {
+  background: #222; 
+  border-radius: 2px;
+  background-color: transparent;
+}
+/* Handle */
+#menu-left::-webkit-scrollbar-thumb {
+  background: #777; 
+  border-radius: 2px;
+}
+/* Handle on hover */
+#menu-left::-webkit-scrollbar-thumb:hover {
+  background: #888; 
+}
