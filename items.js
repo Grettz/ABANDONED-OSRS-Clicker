@@ -1,8 +1,6 @@
-let items = [
-    {
-        id: 0,
+let items = [{
         name: "Gold",
-        itemType: "Currency",
+        type: "Currency",
         members: false,
         tradeable: true,
         equipable: false,
@@ -11,9 +9,8 @@ let items = [
         weight: 0,
     },
     {
-        id: 1,
         name: "Clay",
-        itemType: "Material",
+        type: "Material",
         members: false,
         tradeable: true,
         equipable: false,
@@ -22,9 +19,8 @@ let items = [
         weight: 1,
     },
     {
-        id: 2,
         name: "Copper Ore",
-        itemType: "Ore",
+        type: "Ore",
         members: false,
         tradeable: true,
         equipable: false,
@@ -33,9 +29,8 @@ let items = [
         weight: 2.267,
     },
     {
-        id: 3,
         name: "Tin Ore",
-        itemType: "Ore",
+        type: "Ore",
         members: false,
         tradeable: true,
         equipable: false,
@@ -44,9 +39,8 @@ let items = [
         weight: 2.267,
     },
     {
-        id: 4,
         name: "Rune Essence",
-        itemType: "Material",
+        type: "Material",
         members: false,
         tradeable: true,
         equipable: false,
@@ -55,9 +49,8 @@ let items = [
         weight: 0.002,
     },
     {
-        id: 5,
         name: "Blurite Ore",
-        itemType: "Ore",
+        type: "Ore",
         members: false,
         tradeable: true,
         equipable: false,
@@ -66,9 +59,8 @@ let items = [
         weight: 2.267,
     },
     {
-        id: 6,
         name: "Limestone",
-        itemType: "Material",
+        type: "Material",
         members: true,
         tradeable: true,
         equipable: false,
@@ -77,9 +69,8 @@ let items = [
         weight: 2.267,
     },
     {
-        id: 7,
         name: "Iron Ore",
-        itemType: "Ore",
+        type: "Ore",
         members: false,
         tradeable: true,
         equipable: false,
@@ -88,9 +79,8 @@ let items = [
         weight: 2.267,
     },
     {
-        id: 8,
         name: "Silver Ore",
-        itemType: "Ore",
+        type: "Ore",
         members: false,
         tradeable: true,
         equipable: false,
@@ -99,9 +89,8 @@ let items = [
         weight: 2.267,
     },
     {
-        id: 9,
         name: "Elemental Ore",
-        itemType: "Ore",
+        type: "Ore",
         members: true,
         tradeable: false,
         equipable: false,
@@ -110,9 +99,8 @@ let items = [
         weight: 2.267,
     },
     {
-        id: 10,
         name: "Pure Essence",
-        itemType: "Material",
+        type: "Material",
         members: false,
         tradeable: true,
         equipable: false,
@@ -121,9 +109,8 @@ let items = [
         weight: 0.002,
     },
     {
-        id: 11,
         name: "Coal",
-        itemType: "Ore",
+        type: "Ore",
         members: false,
         tradeable: true,
         equipable: false,

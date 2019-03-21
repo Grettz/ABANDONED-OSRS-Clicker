@@ -6,36 +6,38 @@ let totalTime = 0;
 let gameTicksLeft = 0;
 let tickRate = 10;
 let fpsRate = 10;
-let sudoStop = false;
 let prevState = {};
 
 function tick() {
-    if(sudoStop) {
-        return;
-    }
     let newTime = new Date();
     totalTime += newTime - curTime;
     gameTicksLeft += newTime - curTime;
     curTime = newTime;
 
-    let didSomething = false; //for performance
+    let didSomething = false;
 
     while(gameTicksLeft > (1000 / tickRate)) {
-        
+
         didSomething = true;
 
-        $.each(skills, function(){ //Skills tick
-            this.tick();
+        //Check skills for level up
+        $.each(player.skills, function(){
+            if (this.levelExp >= nextLvlExp(this.level)) {
+                // levelUpSkill(this); make this a function
+                this.level += 1;
+                console.log(this.level);
+            }
         });
-
         gameTicksLeft -= 1000 / tickRate / gameSpeed / bonusSpeed;
     }
-    if(didSomething){ //Update view
+
+    if(didSomething){
         view.updating.update();
     }
 };
 
 
 function startGame() {
+    loadGame();
     setInterval(tick, 1000 / tickRate);
 };

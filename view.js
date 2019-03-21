@@ -1,38 +1,50 @@
-let activeScreen = "";
+activeScreen = "";
 
 let view = {
     updating: {
-        update: function(){
-            //Compare prevState and update whats changed
-            view.updating.skillScreen.tempUpdate();
-
+        update: function () {
+            if ($("#skill-screen").is(":visible")) {
+                view.updating.skillScreen.tempUpdate();
+            }
             view.updating.saveCurrentState();
         },
         skillScreen: {
-            initialize: function(skillId){
-                //Set title
-                $('#title-bar #title').text(skillId);
-                //Set lvl & exp
-                let skill = skills[skillId];
-                $("#cur-level").text(skill.level);
-                $("#cur-exp").text(skill.exp);
-                $("#next-level-exp").text(nextLvlExp(skill.level));
+            initialize: function (skillId) {
+                //Set active screen
                 activeScreen = skillId;
-            },
-            template1: function(skill){
+                $("#skill-screen").css("display", "grid");
 
+                let playerSkill = player.skills[activeScreen];
+
+                $("#title-bar #title").text(skillId);
+                $("#cur-level").text(playerSkill.level);
+                $("#cur-exp").text(playerSkill.levelExp);
+                $("#next-level-exp").text(nextLvlExp(playerSkill.level));
+                $("#exp-progress").css("width", playerSkill.levelExp / nextLvlExp(playerSkill.level) * 100 + "%");
+
+                //Highlight active skill button
+                $(".skill").css("opacity", "");
+                $("#skills-container #"+skillId).css("opacity", "0.1");
             },
-            //template2...
-            tempUpdate: function(){
-                $("#cur-level").text(skills.mining.level);
-                $("#cur-exp").text(skills.mining.levelExp);
-                $("#next-level-exp").text(nextLvlExp(skills.mining.level));
-                console.log(skills.mining.levelExp / nextLvlExp(skills.mining.level) * 100 + "%");
+            tempUpdate: function () {
+                let playerSkill = player.skills[activeScreen];
+                let prevSkill = prevState.skills[activeScreen];
+
+                if (prevSkill.exp != playerSkill.exp){
+                    $("#cur-level").text(playerSkill.level);
+                    $("#cur-exp").text(playerSkill.levelExp);
+                    $("#next-level-exp").text(nextLvlExp(playerSkill.level));
+                    $("#exp-progress").stop().animate({width: playerSkill.levelExp / nextLvlExp(playerSkill.level) * 100 + "%"}, {duration: 500}); //Animate exp bar
+                }
+            },
+            exit: function () {
+                $("#skill-screen").css("display", "none"); //Hide screen
+                $(".skill").css("opacity", ""); // Remove skill icon highlight
+                activeScreen = "";
             },
         },
-        saveCurrentState: function(){
-            // prevState = copyArray(skills);
-            // console.log(prevState);
+        saveCurrentState: function () {
+            prevState = copyArray(player);
         },
     },
 };
