@@ -1,5 +1,6 @@
 let items = [{
         name: "Gold",
+        img: "images/icons/clay.png",
         type: "Currency",
         members: false,
         tradeable: true,
@@ -10,6 +11,7 @@ let items = [{
     },
     {
         name: "Clay",
+        img: "images/icons/clay.png",
         type: "Material",
         members: false,
         tradeable: true,
@@ -20,6 +22,7 @@ let items = [{
     },
     {
         name: "Copper Ore",
+        img: "images/icons/copperOre.png",
         type: "Ore",
         members: false,
         tradeable: true,
@@ -30,6 +33,7 @@ let items = [{
     },
     {
         name: "Tin Ore",
+        img: "images/icons/tinOre.png",
         type: "Ore",
         members: false,
         tradeable: true,
@@ -40,6 +44,7 @@ let items = [{
     },
     {
         name: "Rune Essence",
+        img: "images/icons/runeEssence.png",
         type: "Material",
         members: false,
         tradeable: true,
@@ -50,6 +55,7 @@ let items = [{
     },
     {
         name: "Blurite Ore",
+        img: "images/icons/bluriteOre.png",
         type: "Ore",
         members: false,
         tradeable: true,
@@ -60,6 +66,7 @@ let items = [{
     },
     {
         name: "Limestone",
+        img: "images/icons/limestone.png",
         type: "Material",
         members: true,
         tradeable: true,
@@ -70,6 +77,7 @@ let items = [{
     },
     {
         name: "Iron Ore",
+        img: "images/icons/ironOre.png",
         type: "Ore",
         members: false,
         tradeable: true,
@@ -80,6 +88,7 @@ let items = [{
     },
     {
         name: "Silver Ore",
+        img: "images/icons/silverOre.png",
         type: "Ore",
         members: false,
         tradeable: true,
@@ -90,6 +99,7 @@ let items = [{
     },
     {
         name: "Elemental Ore",
+        img: "images/icons/elementalOre.png",
         type: "Ore",
         members: true,
         tradeable: false,
@@ -100,6 +110,7 @@ let items = [{
     },
     {
         name: "Pure Essence",
+        img: "images/icons/pureEssence.png",
         type: "Material",
         members: false,
         tradeable: true,
@@ -110,6 +121,7 @@ let items = [{
     },
     {
         name: "Coal",
+        img: "images/icons/coal.png",
         type: "Ore",
         members: false,
         tradeable: true,

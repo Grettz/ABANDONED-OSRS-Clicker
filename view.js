@@ -2,6 +2,9 @@ activeScreen = "";
 
 let view = {
     updating: {
+        initiate: function() {
+            view.updating.inventory.initiate();
+        },
         update: function () {
             if ($("#skill-screen").is(":visible")) {
                 view.updating.skillScreen.tempUpdate();
@@ -41,6 +44,24 @@ let view = {
                 $("#skill-screen").css("display", "none"); //Hide screen
                 $(".skill").css("opacity", ""); // Remove skill icon highlight
                 activeScreen = "";
+            },
+        },
+        inventory: {
+            initiate: function() {
+                $.each(player.inventory, function(i) {
+                    if(player.inventory[i] != null) {
+                        $("#"+i).html("<img src='"+player.inventory[i].img+"'/>");
+                    } else {
+                        $("#"+i).html();
+                    }
+                });
+            },
+            update: function() {
+                $.each(player.inventory, function(i) {
+                    if(player.inventory[i] != prevState.inventory[i]) {
+                        $("#"+i).html("<img src='"+player.inventory[i].img+"'/>");
+                    }
+                });
             },
         },
         saveCurrentState: function () {

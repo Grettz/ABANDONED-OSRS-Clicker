@@ -39,5 +39,8 @@ function tick() {
 
 function startGame() {
     loadGame();
+    
+    view.updating.initiate();
+
     setInterval(tick, 1000 / tickRate);
 };

@@ -1,6 +1,5 @@
 let actions = {
     skillAction: function (skillId, action) {
-        var skill = skills[skillId];
         $(".action-button").addClass("cusDisabled");
 
         $("#action-progress").animate({
@@ -10,17 +9,27 @@ let actions = {
             easing: "linear",
             done: function () {
                 let playerSkill = player.skills[skillId];
-                $(this).css("width", "0%");
-            $(".action-button").removeClass("cusDisabled");
-                skill.actionActive = false;
 
+                $(this).css("width", "0%");
+                $(".action-button").removeClass("cusDisabled");
+
+                //Level up
                 while (playerSkill.levelExp + action.expGain >= nextLvlExp(playerSkill.level)){
                     playerSkill.levelExp -= nextLvlExp(playerSkill.level);
                     playerSkill.level += 1;
                     console.log("Level Up!");
                 }
+                //Add exp
                 playerSkill.exp += action.expGain;
                 playerSkill.levelExp += action.expGain;
+
+                //Calc item drops
+                $.each(action.drops, function(){
+                    if(Math.random() <= this.chance) {
+                        addItemToInv(this.name, this.amount);
+                    }
+                });
+                
                 console.log(playerSkill.exp + ", " + playerSkill.levelExp + ", " + action.expGain + ", " + nextLvlExp(playerSkill.level));
             }
         });

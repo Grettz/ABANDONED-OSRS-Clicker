@@ -37,10 +37,10 @@ let skills = {
                 reqLvl: 1,
                 expGain: 10,
                 drops: [{
-                    drop: "Clay",
+                    name: "Clay",
                     chance: 1,
                     amount: 1
-                }, ],
+                }],
             },
             copperOre: {
                 name: "Copper Ore",
@@ -48,10 +48,10 @@ let skills = {
                 reqLvl: 1,
                 expGain: 20,
                 drops: [{
-                    drop: "Copper Ore",
+                    name: "Copper Ore",
                     chance: 1,
                     amount: 1
-                }, ],
+                }],
             },
             tinOre: {
                 name: "Tin Ore",
@@ -59,10 +59,10 @@ let skills = {
                 reqLvl: 1,
                 expGain: 1000,
                 drops: [{
-                    drop: "Tin Ore",
+                    name: "Tin Ore",
                     chance: 1,
                     amount: 1
-                }, ],
+                }],
             },
             runeEssence: {
                 name: "Rune Essence",
@@ -70,10 +70,10 @@ let skills = {
                 reqLvl: 1,
                 expGain: 50,
                 drops: [{
-                    drop: "Rune Essence",
+                    name: "Rune Essence",
                     chance: 1,
                     amount: 1
-                }, ],
+                }],
             },
         },
         levelUpCheck: function () {

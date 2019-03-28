@@ -34,28 +34,50 @@ let player = {
     },
     bank: [],
     skills: {
-        attack: {exp: 0, level: 1, levelExp: function () {return levelExpFromExp(this.exp)}},
-        hitpoints: {exp: 200000000, level: 3, levelExp: function () {return levelExpFromExp(this.exp)}},
+        attack: {exp: 0, level: 1, levelExp: 0},
+        hitpoints: {exp: 200000000, level: 3, levelExp: 0},
         mining: {exp: 0, level: 1, levelExp: 0},
-        strength: {exp: 0, level: 1, levelExp: function () {return levelExpFromExp(this.exp)}},
-        agility: {exp: 0, level: 1, levelExp: function () {return levelExpFromExp(this.exp)}},
-        smithing: {exp: 0, level: 1, levelExp: function () {return levelExpFromExp(this.exp)}},
-        defence: {exp: 0, level: 1, levelExp: function () {return levelExpFromExp(this.exp)}},
-        herblore: {exp: 0, level: 1, levelExp: function () {return levelExpFromExp(this.exp)}},
-        fishing: {exp: 0, level: 1, levelExp: function () {return levelExpFromExp(this.exp)}},
-        ranged: {exp: 0, level: 1, levelExp: function () {return levelExpFromExp(this.exp)}},
-        thieving: {exp: 0, level: 1, levelExp: function () {return levelExpFromExp(this.exp)}},
-        cooking: {exp: 0, level: 1, levelExp: function () {return levelExpFromExp(this.exp)}},
-        prayer: {exp: 0, level: 1, levelExp: function () {return levelExpFromExp(this.exp)}},
-        crafting: {exp: 0, level: 1, levelExp: function () {return levelExpFromExp(this.exp)}},
-        firemaking: {exp: 0, level: 1, levelExp: function () {return levelExpFromExp(this.exp)}},
-        magic: {exp: 0, level: 1, levelExp: function () {return levelExpFromExp(this.exp)}},
-        fletching: {exp: 0, level: 1, levelExp: function () {return levelExpFromExp(this.exp)}},
-        woodcutting: {exp: 0, level: 1, levelExp: function () {return levelExpFromExp(this.exp)}},
-        runecrafting: {exp: 0, level: 1, levelExp: function () {return levelExpFromExp(this.exp)}},
-        slayer: {exp: 0, level: 1, levelExp: function () {return levelExpFromExp(this.exp)}},
-        farming: {exp: 0, level: 1, levelExp: function () {return levelExpFromExp(this.exp)}},
-        construction: {exp: 0, level: 1, levelExp: function () {return levelExpFromExp(this.exp)}},
-        hunter: {exp: 0, level: 1, levelExp: function () {return levelExpFromExp(this.exp)}},
+        strength: {exp: 0, level: 1, levelExp: 0},
+        agility: {exp: 0, level: 1, levelExp: 0},
+        smithing: {exp: 0, level: 1, levelExp: 0},
+        defence: {exp: 0, level: 1, levelExp: 0},
+        herblore: {exp: 0, level: 1, levelExp: 0},
+        fishing: {exp: 0, level: 1, levelExp: 0},
+        ranged: {exp: 0, level: 1, levelExp: 0},
+        thieving: {exp: 0, level: 1, levelExp: 0},
+        cooking: {exp: 0, level: 1, levelExp: 0},
+        prayer: {exp: 0, level: 1, levelExp: 0},
+        crafting: {exp: 0, level: 1, levelExp: 0},
+        firemaking: {exp: 0, level: 1, levelExp: 0},
+        magic: {exp: 0, level: 1, levelExp: 0},
+        fletching: {exp: 0, level: 1, levelExp: 0},
+        woodcutting: {exp: 0, level: 1, levelExp: 0},
+        runecrafting: {exp: 0, level: 1, levelExp: 0},
+        slayer: {exp: 0, level: 1, levelExp: 0},
+        farming: {exp: 0, level: 1, levelExp: 0},
+        construction: {exp: 0, level: 1, levelExp: 0},
+        hunter: {exp: 0, level: 1, levelExp: 0},
     }
+}
+
+function addItemToInv(itemName, qty) {
+    //Get item object
+    let item;
+    $.each(items, function(){
+        if(this.name == itemName) {
+            item = this;
+            return false;
+        }
+    });
+    //Add to inv
+    for(let i=0; i<qty; i++) {
+        $.each(player.inventory, function(i){
+            if(player.inventory[i] == null) {
+                player.inventory[i] = item;
+                console.log(item.name+" added to inventory!");
+                return false;
+            }
+        });
+    }
+    view.updating.inventory.update();
 }
